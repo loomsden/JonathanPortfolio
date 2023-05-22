@@ -26,3 +26,5 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish JonathanPortfolio/JonathanPortfolio/Program.cs -c Release -o website
