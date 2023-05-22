@@ -1,0 +1,179 @@
+html {
+    font-size: 58%;
+}
+
+@media (max-width: 62.5em) {
+    html {
+        font-size: 51.25%;
+    }
+}
+
+@media (max-width: 56.25em) {
+    html {
+        font-size: 49%;
+    }
+
+    .skew-feature {
+        border-radius: 6.3rem;
+    }
+}
+
+@media (max-width: 37.5em) {
+    html {
+        font-size: 46%;
+    }
+
+    .skew-feature {
+        border-radius: 4.3rem;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: #10101a;
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.home {
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+}
+
+.skew-container {
+    height: 800px;
+    width: 600px;
+    padding: 0px;
+    overflow: hidden;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s;
+    border-radius: 7.3rem;
+}
+
+.skew-feature {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 7.3rem;
+    background: linear-gradient(180deg,rgba(35,37,49,.5),rgba(15,15,24,.5));
+}
+
+.shine {
+    width: 650px;
+    height: 650px;
+    background-color: #4BE2E9;
+    filter: blur(180px);
+    border-radius: 300px;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: soft-light;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: block;
+}
+
+.project-img {
+    border-radius: 5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.border {
+    border: 1px solid #20222e !important;
+}
+
+.rounded-3 {
+    border-radius: 12px !important;
+}
+
+.color-bg-subtle {
+    background-color: #161b22 !important;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row > * {
+    margin: 20px;
+}
+
+.content-title {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.games {
+    text-align: left;
+}
+
+.science {
+    text-align: right;
+}
+
+.vl {
+    border-left: 1px solid #30363d;
+    height: 500px;
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+project-card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+.up-button {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    border-radius: 30px;
+    background: linear-gradient(180deg,rgba(35,37,49,.5),rgba(15,15,24,.5));
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
