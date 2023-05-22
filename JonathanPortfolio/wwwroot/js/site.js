@@ -14,7 +14,7 @@ class CardSkewElement extends HTMLElement {
     constructor() {
         super();
 
-        this.className = "skew-container" 
+        this.classList.add("skew-container")
    
         let card = document.createElement('div')
         card.className = "skew-feature border"
@@ -51,7 +51,7 @@ class CardSkewElement extends HTMLElement {
         }
 
         mouseOverContainer.onmouseenter = function () {
-            shine.style.opacity = "0.4";
+            shine.style.opacity = "0.85";
         }
 
         mouseOverContainer.onmousemove = function (e) {
@@ -97,6 +97,10 @@ class ProjectCard extends HTMLElement {
         const type = this.appendChild(document.createElement("h2"));
         type.className = "project-type";
         type.textContent = this.hasAttribute("type") ? this.getAttribute("type") : "Type Here";
+
+        const description = this.appendChild(document.createElement("p"));
+        description.className = "project-description";
+        description.textContent = this.hasAttribute("description") ? this.getAttribute("description") : "description Here";
     }
 }
 

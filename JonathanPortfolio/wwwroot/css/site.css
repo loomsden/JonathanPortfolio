@@ -59,8 +59,8 @@ img {
 }
 
 .skew-container {
-    height: 800px;
-    width: 600px;
+    max-width: 500px;
+    min-width: 300px;
     padding: 0px;
     overflow: hidden;
     display: block;
@@ -75,7 +75,7 @@ img {
     height: 100%;
     padding: 20px;
     border-radius: 7.3rem;
-    background: linear-gradient(180deg,rgba(35,37,49,.5),rgba(15,15,24,.5));
+    background: linear-gradient(180deg,rgba(35,37,49,1),rgba(15,15,24,1));
 }
 
 .shine {
@@ -124,6 +124,7 @@ img {
     display: flex;
     flex-direction: column;
     max-width: 600px;
+    align-items:center;
 }
 
 .row {
@@ -137,6 +138,7 @@ img {
 
 .content-title {
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .text-center {
@@ -153,7 +155,7 @@ img {
 
 .vl {
     border-left: 1px solid #30363d;
-    height: 500px;
+    height: 100px;
     width: 0px;
     margin: 0px;
     padding: 0px;
@@ -172,8 +174,17 @@ project-card {
     height: 60px;
     padding: 5px;
     border-radius: 30px;
-    background: linear-gradient(180deg,rgba(35,37,49,.5),rgba(15,15,24,.5));
+    background: linear-gradient(180deg,rgba(35,37,49,1),rgba(15,15,24,1));
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.margin-b-2 {
+    margin-bottom: 2rem;
+}
+
+.hide-col {
+    width: 100px;
+    /*display: none;*/
 }
