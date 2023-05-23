@@ -58,8 +58,14 @@ img {
     align-items: center;
 }
 
+.projects {
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+}
+
 .skew-container {
-    max-width: 500px;
+    
     min-width: 300px;
     padding: 0px;
     overflow: hidden;
@@ -73,7 +79,6 @@ img {
 .skew-feature {
     width: 100%;
     height: 100%;
-    padding: 20px;
     border-radius: 7.3rem;
     background: linear-gradient(180deg,rgba(35,37,49,1),rgba(15,15,24,1));
 }
@@ -92,12 +97,6 @@ img {
     left: 0px;
     position: absolute;
     display: block;
-}
-
-.project-img {
-    border-radius: 5rem;
-    width: 100%;
-    overflow: hidden;
 }
 
 .border {
@@ -121,15 +120,43 @@ img {
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    align-items:center;
+    
+    align-items: center;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    max-width: 900px;
+
+    @media screen and (max-width: 768px) {
+        overflow: auto;
+        overflow-x: hidden;
+    }
 }
 
+.column:hover {
+    -webkit-flex-grow: 3;
+    flex-grow: 3;
+}
+
+
 .row {
+    height: 100%;
+    width: 100%;
+    display: -webkit-flex; /* Safari */
     display: flex;
     flex-direction: row;
+
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
 }
 
 .row > * {
@@ -155,18 +182,22 @@ img {
 
 .vl {
     border-left: 1px solid #30363d;
-    height: 100px;
+    height: 100vh;
     width: 0px;
     margin: 0px;
     padding: 0px;
 }
 
 project-card {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    margin: 4rem;
+    display: block;
+    margin: 60px;
+    text-align:left;
+}
+
+.project-img {
+    border-radius: 4rem;
+    width: 100%;
+    overflow: hidden;
 }
 
 .up-button {
@@ -187,4 +218,62 @@ project-card {
 .hide-col {
     width: 100px;
     /*display: none;*/
+}
+
+
+
+/*-------------- CSS FOR TEST ----------------------*/
+
+
+
+$defaultSeconds: 3s;
+
+
+@keyframes aboutFlexSlide {
+    0% {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+    }
+
+    50% {
+        -webkit-flex-grow: 3;
+        flex-grow: 3;
+    }
+
+    100% {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+    }
+}
+
+
+@keyframes homeFlextitle {
+    0% {
+        transform: rotate(90deg);
+        top: 15%;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        top: 15%;
+    }
+
+    100% {
+        transform: rotate(90deg);
+        top: 15%;
+    }
+}
+
+@keyframes flexAboutHome {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
