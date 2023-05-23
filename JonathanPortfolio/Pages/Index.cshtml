@@ -8,14 +8,15 @@
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><g stroke-width="40" stroke="hsl(0, 0%, 100%)" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(225, 400, 400)"><line x1="281.5" y1="281.5" x2="518.5" y2="518.5" marker-end="url(#SvgjsMarker1806)"></line></g><defs><marker markerWidth="6" markerHeight="6" refX="3" refY="3" viewBox="0 0 6 6" orient="auto" id="SvgjsMarker1806"><polyline points="0,3 3,1.5 0,0" fill="none" stroke-width="1" stroke="hsl(0, 0%, 100%)" stroke-linecap="round" transform="matrix(1,0,0,1,1,1.5)" stroke-linejoin="round"></polyline></marker></defs></svg>
     </a>
 </div>
-<div class="home">
+<div id="home">
     <h1 class="text-center">Jonathan Lumsden</h1>
     <div class="shine" style="opacity: 1;"></div>
 </div>
-<div class="projects">
+<div id="expertise"></div>
+<div id="projects">
     <div class="row justify-center">
-        <div class="column">
-            <div class="content-title games display-6">Video Game Design</div>
+        <div id="games-col" class="column">
+            <div class="content-title-container games display-6"><button class="category-button" onclick="gamesBig()";>Video Game Design</button></div>
             <skew-card class="margin-b-2">
                 <project-card img="/images/apocalypsemeow3_orig.png" title="Apocalypse Meow" type="Video Game (VR)" description="Project made in a group." link=""></project-card>
             </skew-card>
@@ -24,8 +25,8 @@
             </skew-card>
         </div>
         <div class="vl"></div>
-        <div class="column">
-            <div class="content-title science display-6">Computer Science</div>
+        <div id="science-col" class="column">
+            <div class="content-title-container science display-6"><button class="category-button" onclick="scienceBig()">Computer Science</button></div>
             <skew-card class="margin-b-2">
                 <project-card img="/images/apocalypsemeow3_orig.png" title="Apocalypse Meow" type="Video Game (VR)" description="Project made in a group." link=""></project-card>
             </skew-card>
@@ -34,4 +35,10 @@
             </skew-card>
         </div>
     </div>
+</div>
+<div id="education">
+
+</div>
+<div id="timeline">
+
 </div>

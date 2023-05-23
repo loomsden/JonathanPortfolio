@@ -28,6 +28,29 @@ html {
     }
 }
 
+/*--------SCROLL BAR-------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(1,1,1,0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #050510;
+    border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0a0a15;
+}
+/*-----------SCROLL BAR END-----------*/
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -52,16 +75,32 @@ img {
     object-fit: contain;
 }
 
-.home {
+#home {
     height: 100vh;
     align-content: center;
     align-items: center;
+    border: 1px solid #20222e !important;
 }
 
-.projects {
-    height: 100vh;
+#expertise {
+    height: 65vh;
+    border: 1px solid #20222e !important;
+}
+
+#projects {
     align-content: center;
     align-items: center;
+    border: 1px solid #20222e !important;
+}
+
+#education {
+    height: 100vh;
+    border: 1px solid #20222e !important;
+}
+
+#timeline {
+    height: 100vh;
+    border: 1px solid #20222e !important;
 }
 
 .skew-container {
@@ -97,6 +136,30 @@ img {
     left: 0px;
     position: absolute;
     display: block;
+}
+
+project-card {
+    display: block;
+    margin: 60px;
+    text-align: left;
+    z-index:1;
+}
+
+.project-img {
+    border-radius: 4rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.category-button {
+    background-color: rgba(1,1,1,0);
+    color: white;
+    border: none;
+    transition: font-size 0.5s;
+}
+
+.category-button:hover {
+    font-size:larger;
 }
 
 .border {
@@ -138,11 +201,14 @@ img {
     }
 }
 
-.column:hover {
+.big {
     -webkit-flex-grow: 3;
     flex-grow: 3;
 }
 
+.small {
+
+}
 
 .row {
     height: 100%;
@@ -153,7 +219,7 @@ img {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .row {
         flex-direction: column;
     }
@@ -163,7 +229,7 @@ img {
     margin: 20px;
 }
 
-.content-title {
+.content-title-container {
     width: 100%;
     margin-bottom: 2rem;
 }
@@ -186,18 +252,6 @@ img {
     width: 0px;
     margin: 0px;
     padding: 0px;
-}
-
-project-card {
-    display: block;
-    margin: 60px;
-    text-align:left;
-}
-
-.project-img {
-    border-radius: 4rem;
-    width: 100%;
-    overflow: hidden;
 }
 
 .up-button {

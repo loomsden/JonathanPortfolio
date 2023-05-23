@@ -3,9 +3,10 @@
 
 // Write your JavaScript code.\
 
+//import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+
+
 // Clamp number between two values with the following line:
-
-
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 const clampAbs = (num, max) => Math.min(Math.max(num, -max), max);
 
@@ -107,27 +108,45 @@ class ProjectCard extends HTMLElement {
 customElements.define("project-card", ProjectCard);
 
 
+function gamesBig() {
+    if (document.getElementById("games-col").classList.contains("big")) {
+        document.getElementById("games-col").classList.remove("big");
+        document.getElementById("science-col").classList.remove("small");
+
+    } else {
+        document.getElementById("games-col").classList.add("big");
+        document.getElementById("games-col").classList.remove("small");
+
+        document.getElementById("science-col").classList.add("small");
+        document.getElementById("science-col").classList.remove("big");
+    }
+    
+}
+
+function scienceBig() {
+    if (document.getElementById("science-col").classList.contains("big")) {
+        document.getElementById("science-col").classList.remove("big");
+        document.getElementById("games-col").classList.remove("small");
+    } else {
+        document.getElementById("science-col").classList.add("big");
+        document.getElementById("science-col").classList.remove("small");
+
+        document.getElementById("games-col").classList.add("small");
+        document.getElementById("games-col").classList.remove("big");
+    }
+    
+}
 
 /*----------------JS FOR TEST----------------*/
+class Web3DLogo {
+    constructor() {
+        this.Initialize();
+    }
 
-(function () {
-    $(".flex-slide").each(function () {
-        $(this).hover(function () {
-            $(this).find('.flex-title').css({
-                transform: 'rotate(0deg)',
-                top: '10%'
-            });
-            $(this).find('.flex-about').css({
-                opacity: '1'
-            });
-        }, function () {
-            $(this).find('.flex-title').css({
-                transform: 'rotate(90deg)',
-                top: '15%'
-            });
-            $(this).find('.flex-about').css({
-                opacity: '0'
-            });
-        })
-    });
-})();
+    _Initialize() {
+        this._threejs = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true,
+        });
+    }
+}
