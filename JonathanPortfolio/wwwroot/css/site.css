@@ -85,6 +85,9 @@ img {
 #expertise {
     height: 65vh;
     border: 1px solid #20222e !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #projects {
@@ -104,7 +107,6 @@ img {
 }
 
 .skew-container {
-    
     min-width: 300px;
     padding: 0px;
     overflow: hidden;
@@ -140,7 +142,7 @@ img {
 
 project-card {
     display: block;
-    margin: 60px;
+    margin: 7rem;
     text-align: left;
     z-index:1;
 }
@@ -182,8 +184,8 @@ project-card {
     justify-content: space-between;
 }
 
-.column {
-    
+.flex-section {
+    margin: 20px;
     align-items: center;
     -webkit-flex: 1; /* Safari 6.1+ */
     -ms-flex: 1; /* IE 10 */
@@ -210,7 +212,7 @@ project-card {
 
 }
 
-.row {
+.flex-container {
     height: 100%;
     width: 100%;
     display: -webkit-flex; /* Safari */
@@ -219,14 +221,26 @@ project-card {
 
 }
 
-@media (max-width: 850px) {
-    .row {
-        flex-direction: column;
-    }
+.divider {
+    border-left: 1px solid #30363d;
+    width: 0px;
+    margin: 20px;
+    padding: 0px;
 }
 
-.row > * {
-    margin: 20px;
+@media (max-width: 850px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .divider {
+        border-top: 1px solid #30363d;
+        width: 95%;
+        height: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
 }
 
 .content-title-container {
@@ -246,13 +260,7 @@ project-card {
     text-align: right;
 }
 
-.vl {
-    border-left: 1px solid #30363d;
-    height: 100vh;
-    width: 0px;
-    margin: 0px;
-    padding: 0px;
-}
+
 
 .up-button {
     width: 60px;

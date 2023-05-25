@@ -3,7 +3,9 @@
 
 // Write your JavaScript code.\
 
-//import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
+import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/FBXLoader.js';
 
 
 // Clamp number between two values with the following line:
@@ -137,16 +139,82 @@ function scienceBig() {
     
 }
 
-/*----------------JS FOR TEST----------------*/
-class Web3DLogo {
-    constructor() {
-        this.Initialize();
-    }
 
-    _Initialize() {
-        this._threejs = new THREE.WebGLRenderer({
-            antialias: true,
-            alpha: true,
-        });
+/*----------------JS FOR TEST----------------*/
+// Scene
+const scene = new THREE.Scene();
+
+// Add a cube to the scene
+/*const geometry = new THREE.BoxGeometry(3, 1, 3); // width, height, depth
+const material = new THREE.MeshLambertMaterial({ color: 0xfb8e00 });
+const mesh = new THREE.Mesh(geometry, material);
+mesh.position.set(0, 0, 0);
+scene.add(mesh);*/
+
+scene.background = new THREE.Color(0xffffff);
+
+// Set up lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+directionalLight.position.set(10, 20, 0); // x, y, z
+scene.add(directionalLight);
+
+/*
+const loader = new GLTFLoader();
+//loader.setPath('/images/');
+loader.load('https://cdn.jsdelivr.net/gh/Sean-Bradley/React-Three-Fiber-Boilerplate@glTFLoader/public/models/monkey.glb', function (gltf) {
+    monkey = gltf.scene.children[0];
+    monkey.scale.set(10, 10, 10);
+    gltf.scene.traverse(c => {
+        c.castShadow = true;
+    });
+    scene.add(gltf.scene);
+});*/
+
+const fbxLoader = new FBXLoader()
+fbxLoader.load(
+    'images/JonLogo.fbx',
+    (object) => {
+        // object.traverse(function (child) {
+        //     if ((child as THREE.Mesh).isMesh) {
+        //         // (child as THREE.Mesh).material = material
+        //         if ((child as THREE.Mesh).material) {
+        //             ((child as THREE.Mesh).material as THREE.MeshBasicMaterial).transparent = false
+        //         }
+        //     }
+        // })
+        // object.scale.set(.01, .01, .01)
+        scene.add(object)
+    },
+    (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
     }
-}
+)
+
+// Camera
+const width = 10;
+const height = width * (window.innerHeight / window.innerWidth);
+const camera = new THREE.OrthographicCamera(
+    width / -2, // left
+    width / 2, // right
+    height / 2, // top
+    height / -2, // bottom
+    1, // near
+    100 // far
+);
+
+camera.position.set(4, 4, 4);
+camera.lookAt(0, 0, 0);
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.render(scene, camera);
+
+// Add it to HTML
+document.getElementById("home").appendChild(renderer.domElement);
